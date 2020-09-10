@@ -30,8 +30,10 @@
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
-
+  <%= form.hidden_field :creator, :value =>session[:user_id] %> 
   <div class="actions">
+
     <%= form.submit %>
+
   </div>
 <% end %>

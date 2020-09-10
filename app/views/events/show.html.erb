@@ -20,5 +20,12 @@
   <%= @event.location %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<p>
+  <strong>Attend:</strong>
+  <% @event.attendances.each do | e | %>
+  	<p> <%= e.user.name %></p>
+  <% end %>
+</p>
+
+
 <%= link_to 'Back', events_path %>
