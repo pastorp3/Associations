@@ -73,7 +73,7 @@ class EventsController < ApplicationController
     end
 
     def check_user_login
-      if session[:username].empty?
+      if session[:username].nil?
         redirect_to users_path
       end
     end
