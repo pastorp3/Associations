@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sign in to see the Events</h1>
+<%= form_for(@user,  url: "/", method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :name, "Enter your name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, "Enter your email" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<br>
+
+New To the page? <b><%= link_to 'Create a New User', new_user_path %></b>

@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_user_login
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+      @events = Event.all
   end
 
   # GET /events/1
@@ -70,5 +70,11 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :body, :date, :location)
+    end
+
+    def check_user_login
+      if session[:username].empty?
+        redirect_to users_path
+      end
     end
 end
