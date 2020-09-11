@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p>Welcome: <b><%= session[:username] %></b> <a href="/access">Log Out</a></p>
-<h1>Events</h1>
+<h1>Available Events</h1>
 
 <table>
   <thead>
@@ -21,13 +21,18 @@
         <td><%= event.body %></td>
         <td><%= event.date %></td>
         <td><%= event.location %></td>
-        <td><%= event.creator %></td>
+        <td><%= event.creator_id %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'attend', "/attend/#{event.id}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<h2>My created events</h2>
+<% @user.events.each do |e| %>
+  <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+<% end %>
 
 <br>
 

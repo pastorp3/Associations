@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Event Info</h2>
 <p>
   <strong>Name:</strong>
   <%= @event.title %>
@@ -19,9 +19,10 @@
   <strong>Location:</strong>
   <%= @event.location %>
 </p>
-
+<br>
+<br>
 <p>
-  <strong>Attend:</strong>
+  <h2>Attendees:</h2>
   <% @event.attendances.each do | e | %>
   	<p> <%= e.user.name %></p>
   <% end %>
