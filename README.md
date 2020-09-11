@@ -4,7 +4,7 @@
 
 # Event Associations
 
-> This project is to help understand the Associations with Users, Events and AAttendees in a Ruby on Rails App.
+> This project is to help understand the Associations with Users, Events and Attendees in a Ruby on Rails App.
 
 ![GIF](https://static.wixstatic.com/media/9e3948_c6f36b2f39294bf3bbac599e9e741943~mv2.gif )
 
@@ -32,7 +32,7 @@ After that go to your browser and put the following addresses in the address bar
 For creating posts go to
 > localhost:3000/
 
-Make sure you are logged in so you can see who posted what. If you don't have an account just sign up for one in the sigup link
+Log in or Create a new user to see all de avidable Events.
 
 
 ## Authors
