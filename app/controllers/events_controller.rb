@@ -1,17 +1,16 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: %i[show edit update destroy]
   before_action :check_user_login
   # GET /events
   # GET /events.json
   def index
-      @events = Event.all
-      @user = User.find(session[:user_id])
+    @events = Event.all
+    @user = User.find(session[:user_id])
   end
 
   # GET /events/1
   # GET /events/1.json
-  def show
-  end
+  def show; end
 
   # GET /events/new
   def new
@@ -19,8 +18,7 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /events
   # POST /events.json
@@ -63,19 +61,18 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def event_params
-      params.require(:event).permit(:title, :body, :date, :location, :creator_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def check_user_login
-      if session[:username].nil?
-        redirect_to users_path
-      end
-    end
+  # Only allow a list of trusted parameters through.
+  def event_params
+    params.require(:event).permit(:title, :body, :date, :location, :creator_id)
+  end
+
+  def check_user_login
+    redirect_to users_path if session[:username].nil?
+  end
 end

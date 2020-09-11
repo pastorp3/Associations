@@ -23,7 +23,5 @@ class AccessControlController < ApplicationController
     attend.event_id = params[:id]
     attend.save
     redirect_to events_path
-
-
   end
 end
