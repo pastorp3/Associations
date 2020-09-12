@@ -24,6 +24,9 @@ To install it follow the steps in the [link](https://github.com/mateomh/members-
 Clone the [repository URL](https://github.com/pastorp3/Forms-RoR.git), get into the project root folder and run the migrations for the database
 > rails db:migrate
 
+Before run the Rails Server run the next command:
+>yarn install --check-files
+
 And then start the rails server from the terminal with the command
 > rails server
 
@@ -32,8 +35,14 @@ After that go to your browser and put the following addresses in the address bar
 For creating posts go to
 > localhost:3000/
 
-Log in or Create a new user to see all de avidable Events.
+Log in or Create a new user to see all de avidable Events, When you create a user you have to Sign in to have acces to the events.
 
+## Test
+Be sure to install all the gems witn:
+> bundle install
+
+Run all of the tests with the command in the root:
+> rspec
 
 ## Authors
 
