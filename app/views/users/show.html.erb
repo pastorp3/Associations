@@ -10,18 +10,23 @@
   <%= @user.email %>
 </p>
 
-    <h2 class="table-head padding">My Past Events</h2>
+  <h2 class="table-head padding">My created events</h2>
+  <% @user.own_events.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
 
-    <% past = user_clasify_events(@user.attendances, 'past') %>
-    <% past.each do |e| %>
-      <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
-    <% end %>
+  <h2 class="table-head padding">My Past Events</h2>
+
+  <% past = user_clasify_events(@user.attendances, 'past') %>
+  <% past.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
 
 
-    <h2 class="table-head padding">My Upcoming Events</h2>
-    <% future = user_clasify_events(@user.attendances, 'future') %>
-    <% future.each do |e| %>
-      <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
-    <% end %>
+  <h2 class="table-head padding">My Upcoming Events</h2>
+  <% future = user_clasify_events(@user.attendances, 'future') %>
+  <% future.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
 
 <%= link_to 'Back', events_path %>
