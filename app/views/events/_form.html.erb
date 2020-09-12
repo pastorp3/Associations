@@ -12,28 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title, "Name of the event" %>
+    <%= form.label :title, "Name of the event" %><br><br>
     <%= form.text_field :title %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :body, "Description" %>
+    <%= form.label :body, "Description" %><br><br>
     <%= form.text_area :body %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :date %><br><br>
     <%= form.date_select :date %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :location %>
+    <%= form.label :location %><br><br>
     <%= form.text_field :location %>
   </div>
+  <br>
   <%= form.hidden_field :creator_id, :value =>session[:user_id] %> 
   <div class="actions">
 
-    <%= form.submit %>
+    <%= form.submit  %><br>
 
   </div>
 <% end %>

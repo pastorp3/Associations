@@ -1,15 +1,86 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.main-container {
+	width: 100%;
+	
+}
+
+.sub-container {
+	margin: 0px auto;
+	width: fit-content;
+	text-align: center;
+	
+}
+
+.log-out {
+	text-decoration: none;
+	color: white;
+	background-color: black;
+	font-weight: 700;
+	margin-right: 50px;
+	padding: 5px;
+	border-radius: 5px;
+
+
+}
+
+nav {
+	border-bottom: 2px solid black;
+	margin: 0;
+	height: 30px;
+	padding: 5px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.event-welcome {
+	color: black;
+	display: flex;
+	justify-content: space-between;
+}
+
+.my-account {
+	font-weight: 400;
+	color: black;
+}
+
+.table-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.table-1 {
+	margin-right: 50px;
+}
+
+.table-2 {
+	margin-left: 50px;
+}
+
+.table-head {
+	color: white;
+	background-color: black
+}
+
+.new-event {
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	width: fit-content;
+}
+
+.event-text {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+}
+
+.padding {
+	padding: 5px;
+}
+
+
+.title {
+	font-weight: 700;
+	font-size: 25px;
+	margin-left: 50px;
+}

@@ -1,75 +1,86 @@
 <p id="notice"><%= notice %></p>
-<p>
-  Welcome: <b><%= session[:username] %></b> 
-  <br>
-  <a href="/access">Log Out</a> | <a href= <%= "/users/#{session[:user_id]}" %>>My Account</a>
-</p>
-<h1>Upcoming Events</h1>
+<div class="event-welcome">
+  <span>
+    Welcome: <b><%= session[:username] %></b> 
+  </span>
+   <a class="my-account" href= <%= "/users/#{session[:user_id]}" %> >My Account</a>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Creator</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="table-container">
+  <div class="table-1">
+    <h1 class="table-head">Upcoming Events</h1>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <% if Date.today <= event.date %>
+    <table>
+      <thead>
         <tr>
-          <td><%= event.title %></td>
-          <td><%= event.body %></td>
-          <td><%= event.date %></td>
-          <td><%= event.location %></td>
-          <td><%= event.creator.name %></td>
-          <td><%= link_to 'Show', event %></td>
-          <td><%= link_to 'attend', "/attend/#{event.id}" %></td>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Creator</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<h1>Past Events</h1>
+      <tbody>
+        <% @events.each do |event| %>
+          <% if Date.today <= event.date %>
+            <tr class="table-row">
+              <td><%= event.title %></td>
+              <td><%= event.body %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td><%= event.creator.name %></td>
+              <td ><span class="link"><%= link_to 'Show', event %></span></td>
+              <td ><span class="link"><%= link_to 'Attend', "/attend/#{event.id}" %></span></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Creator</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="table-2">
+    <h1 class="table-head">Past Events</h1>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <% if Date.today > event.date %>
+    <table>
+      <thead>
         <tr>
-          <td><%= event.title %></td>
-          <td><%= event.body %></td>
-          <td><%= event.date %></td>
-          <td><%= event.location %></td>
-          <td><%= event.creator.name %></td>
-          <td><%= link_to 'Show', event %></td>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Creator</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<h2>My created events</h2>
+      <tbody>
+        <% @events.each do |event| %>
+          <% if Date.today > event.date %>
+            <tr>
+              <td><%= event.title %></td>
+              <td><%= event.body %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td ><%= event.creator.name %></td>
+              <td ><span class="link"><%= link_to 'Show', event %></span></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 class="table-head">My created events</h2>
 <% @user.own_events.each do |e| %>
   <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
 <% end %>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
+<div class="center-new-event">
+<div class="new-event">
+  <%= link_to 'New Event', new_event_path, class: "event-text" %>
+</div>
+</div>

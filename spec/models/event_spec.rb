@@ -1,5 +1,6 @@
 require "rails_helper"
 
+
 RSpec.describe Event, :type => :model do
   it 'Event gets the creator info' do
     expect(Event.first.creator).not_to eq(nil)

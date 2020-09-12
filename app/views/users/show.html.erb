@@ -10,18 +10,20 @@
   <%= @user.email %>
 </p>
 
-<h2>My Past Events</h2>
-<% @user.attendances.each do |e| %>
-  <% if Date.today > e.event.date %>
-    <p><b>Event:</b> <%= e.event.title %> <b>Date:</b> <%= e.event.date %></p>
-  <% end %>
-<% end %>
+    <h2 class="table-head padding">My Past Events</h2>
+    <% @user.attendances.each do |e| %>
+      <% if Date.today > e.event.date %>
+        <p><b>Event:</b> <%= e.event.title %> <b>Date:</b> <%= e.event.date %></p>
+      <% end %>
+    <% end %>
 
-<h2>My Upcoming Events</h2>
-<% @user.attendances.each do |e| %>
-  <% if Date.today <= e.event.date %>
-    <p><b>Event:</b> <%= e.event.title %> <b>Date:</b> <%= e.event.date %></p>
-  <% end %>
-<% end %>
+
+    <h2 class="table-head padding">My Upcoming Events</h2>
+    <% @user.attendances.each do |e| %>
+      <% if Date.today <= e.event.date %>
+        <p><b>Event:</b> <%= e.event.title %> <b>Date:</b> <%= e.event.date %></p>
+      <% end %>
+    <% end %>
+
 
 <%= link_to 'Back', events_path %>
