@@ -23,8 +23,8 @@
       </thead>
 
       <tbody>
-        <% @events.each do |event| %>
-          <% if Date.today <= event.date %>
+        <% future = event_clasify_events(@events, 'future') %>
+        <% future.each do |event| %>
             <tr class="table-row">
               <td><%= event.title %></td>
               <td><%= event.body %></td>
@@ -34,7 +34,6 @@
               <td ><span class="link"><%= link_to 'Show', event %></span></td>
               <td ><span class="link"><%= link_to 'Attend', "/attend/#{event.id}" %></span></td>
             </tr>
-          <% end %>
         <% end %>
       </tbody>
     </table>
@@ -56,8 +55,8 @@
       </thead>
 
       <tbody>
-        <% @events.each do |event| %>
-          <% if Date.today > event.date %>
+        <% past = event_clasify_events(@events, 'past') %>
+        <% past.each do |event| %>
             <tr>
               <td><%= event.title %></td>
               <td><%= event.body %></td>
@@ -66,7 +65,6 @@
               <td ><%= event.creator.name %></td>
               <td ><span class="link"><%= link_to 'Show', event %></span></td>
             </tr>
-          <% end %>
         <% end %>
       </tbody>
     </table>
