@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: "test event 1"
+  body: "1 from the test database"
   date: 2020-09-10
-  location: MyString
+  location: "microverse"
 
 two:
-  title: MyString
-  body: MyText
-  date: 2020-09-10
-  location: MyString
+  title: "test event 2"
+  body: "2 from the test database"
+  date: 2020-09-15
+  location: "microverse"
