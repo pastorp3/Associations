@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+RSpec.describe User, type: :model do
   it 'User gets the attendances' do
     expect(User.first.attendances[0]).not_to eq(nil)
   end
