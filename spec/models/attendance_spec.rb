@@ -11,7 +11,7 @@ RSpec.describe Attendance, type: :model do
   test_event.save
 
   it 'FAIL CHECK - Checks if the attendance can be created' do
-    test_a = Attendance.create(user_id: 1, event_id: 1)
+    test_a = Attendance.create(user_id: 0, event_id: 0)
     expect(test_a).to be_invalid
   end
 
