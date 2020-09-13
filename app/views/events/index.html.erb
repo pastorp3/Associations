@@ -23,8 +23,7 @@
       </thead>
 
       <tbody>
-        <% future = event_clasify_events(@events, 'future') %>
-        <% future.each do |event| %>
+        <% @future.each do |event| %>
             <tr class="table-row">
               <td><%= event.title %></td>
               <td><%= event.body %></td>
@@ -55,8 +54,7 @@
       </thead>
 
       <tbody>
-        <% past = event_clasify_events(@events, 'past') %>
-        <% past.each do |event| %>
+        <% @past.each do |event| %>
             <tr>
               <td><%= event.title %></td>
               <td><%= event.body %></td>
@@ -74,6 +72,6 @@
 <br>
 <div class="center-new-event">
 <div class="new-event">
-  <%= link_to 'New Event', new_event_path, class: "event-text" %>
+  <b><%= link_to 'Create New Event', new_event_path, class: "event-text" %></b>
 </div>
 </div>
