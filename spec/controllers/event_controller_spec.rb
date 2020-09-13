@@ -27,6 +27,6 @@ RSpec.describe EventsController, type: :controller do
 
   it 'Checks for the show page of an event' do
     get :show, params: { id: test_event.id }, session: { username: test_user.name, user_id: test_user.id }
-    expect(response).to render_template("events/show")
+    expect(response).to render_template('events/show')
   end
 end

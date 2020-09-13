@@ -11,12 +11,12 @@ RSpec.describe AccessControlController, type: :controller do
   test_event.save
 
   it 'checks for the creation of a session with a valid user' do
-    post :sign_in, params: { user: { name: test_user.name }}
+    post :sign_in, params: { user: { name: test_user.name } }
     expect(response).to redirect_to('/events')
   end
 
   it 'checks redirection from a invalid user' do
-    post :sign_in, params: { user: { name: nil }}
+    post :sign_in, params: { user: { name: nil } }
     expect(response).to redirect_to('/users')
   end
 
