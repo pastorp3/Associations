@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @past = Event.all.past_events
-    @future = Event.all.upcoming_events 
+    @future = Event.all.upcoming_events
     @user = User.find(session[:user_id])
   end
 
