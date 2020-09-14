@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+  <h2 class="table-head padding">My created events</h2>
+  <% @user.own_events.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
+
+  <h2 class="table-head padding">My Past Events</h2>
+
+  <% @user.events.past_events.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
+
+
+  <h2 class="table-head padding">My Upcoming Events</h2>
+  <% @user.events.upcoming_events.each do |e| %>
+    <p><b>Event:</b> <%= e.title %> <b>Date:</b> <%= e.date %></p>
+  <% end %>
+
+<%= link_to 'Back', events_path %>

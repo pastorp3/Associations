@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Associations</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <nav>
+        <span class="title">Event Manager</span>
+        <a href="/access" class="log-out">Log Out</a>
+      </nav>
+      <div class="sub-container">
+        
+          <%= yield %>
+        
+      </div>
+    </div>
+  </body>
+</html>
