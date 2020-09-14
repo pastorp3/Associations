@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+<div class="event-welcome">
+  <span>
+    Welcome: <b><%= session[:username] %></b> 
+  </span>
+   <a class="my-account" href= <%= "/users/#{session[:user_id]}" %> >My Account</a>
+</div>
+
+<div class="table-container">
+  <div class="table-1">
+    <h1 class="table-head">Upcoming Events</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Creator</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @future.each do |event| %>
+            <tr class="table-row">
+              <td><%= event.title %></td>
+              <td><%= event.body %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td><%= event.creator.name %></td>
+              <td><span class="link"><%= link_to 'Show', event %></span></td>
+              <td><span class="link"><%= attending(@user,event) %></span></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-2">
+    <h1 class="table-head">Past Events</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Creator</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @past.each do |event| %>
+            <tr>
+              <td><%= event.title %></td>
+              <td><%= event.body %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td ><%= event.creator.name %></td>
+              <td ><span class="link"><%= link_to 'Show', event %></span></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+<div class="center-new-event">
+<div class="new-event">
+  <b><%= link_to 'Create New Event', new_event_path, class: "event-text" %></b>
+</div>
+</div>
