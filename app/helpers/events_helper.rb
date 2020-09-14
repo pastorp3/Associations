@@ -1,5 +1,5 @@
 module EventsHelper
   def attending(user, event)
-    user.attendances.where(event_id: event.id).empty?
+    link_to 'Attend', "/attend/#{event.id}" if Attendance.attending?(user, event).empty?
   end
 end

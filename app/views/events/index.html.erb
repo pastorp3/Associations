@@ -30,10 +30,8 @@
               <td><%= event.date %></td>
               <td><%= event.location %></td>
               <td><%= event.creator.name %></td>
-              <td ><span class="link"><%= link_to 'Show', event %></span></td>
-              <% if attending(@user,event)%>
-                <td ><span class="link"><%= link_to 'Attend', "/attend/#{event.id}" %></span></td>
-              <% end %>     
+              <td><span class="link"><%= link_to 'Show', event %></span></td>
+              <td><span class="link"><%= attending(@user,event) %></span></td>
             </tr>
         <% end %>
       </tbody>
