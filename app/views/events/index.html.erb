@@ -31,7 +31,7 @@
               <td><%= event.location %></td>
               <td><%= event.creator.name %></td>
               <td ><span class="link"><%= link_to 'Show', event %></span></td>
-              <% if Attendance.where(user_id: session[:user_id], event_id: event.id).empty?%>
+              <% if attending(@user,event)%>
                 <td ><span class="link"><%= link_to 'Attend', "/attend/#{event.id}" %></span></td>
               <% end %>     
             </tr>
